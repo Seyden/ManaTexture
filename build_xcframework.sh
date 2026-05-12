@@ -20,20 +20,7 @@ xcodebuild archive \
     -destination "generic/platform=iOS" \
     -archivePath "${BUILD_DIR}/ios.xcarchive" \
     SKIP_INSTALL=NO \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-    | xcpretty 2>/dev/null || true
-
-# Fallback if xcpretty is not installed
-if [ ! -d "${BUILD_DIR}/ios.xcarchive" ]; then
-    xcodebuild archive \
-        -project "$PROJECT" \
-        -scheme "$SCHEME" \
-        -configuration Release \
-        -destination "generic/platform=iOS" \
-        -archivePath "${BUILD_DIR}/ios.xcarchive" \
-        SKIP_INSTALL=NO \
-        BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-fi
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 echo "==> Archiving for iOS Simulator (arm64 + x86_64)"
 xcodebuild archive \
