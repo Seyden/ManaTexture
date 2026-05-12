@@ -13,10 +13,10 @@ let package = Package(
         ),
     ],
     targets: [
-        // Pre-built XCFramework produced by build_xcframework.sh
         .binaryTarget(
             name: "AsyncDisplayKit",
-            path: "Frameworks/AsyncDisplayKit.xcframework"
+            url: "https://github.com/Seyden/ManaTexture/releases/download/v3.2.0/AsyncDisplayKit.xcframework.zip",
+            checksum: "f70fda9d7117ea9d8dc5935c9fcb4a890a29f2004713c43119bc89a13fa7f133"
         ),
     ]
 )
